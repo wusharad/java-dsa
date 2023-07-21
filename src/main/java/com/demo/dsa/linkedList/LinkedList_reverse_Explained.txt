@@ -1,0 +1,44 @@
+
+public void reverse(){
+	Node temp = head;
+	head = tail;
+	tail = temp;
+	
+	Node revList= null;
+	Node proNode = null;
+	for(int i=0; i<length; i++){
+		proNode = temp.next;
+		temp.next = revList;
+		revList = temp;
+		temp = proNode;
+	}
+}
+------------------------------
+Loop1: 
+	temp = [1,2,3,4,N]
+	proNode = [2,3,4,N]
+	temp = [1,N];
+	revList=[1,N];
+	temp = [2,3,4,N]
+------------------------------
+Loop2:
+	temp = [2,3,4, N]
+	proNode = [3,4, N]
+	temp= [2,1,N]
+	revList = [2,1,N];
+	temp = [3,4, N]
+------------------------------
+Loop3:
+	temp = [3,4,N]
+	proNode = [4,N]
+	temp = [3,2,1,N]
+	revList = [3,2,1,N]
+	temp = [4,N]
+-----------------------------
+Loop4:
+	temp = [4,N]
+	proNode = [N]
+	temp = [4, 3,2,1,N]
+	revList = [4, 3,2,1,N]
+	temp = [N]
+-----------------------------
