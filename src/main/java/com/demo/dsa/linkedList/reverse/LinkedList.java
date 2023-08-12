@@ -1,4 +1,4 @@
-package com.demo.dsa.linkedList;
+package com.demo.dsa.linkedList.reverse;
 
 public class LinkedList {
 
